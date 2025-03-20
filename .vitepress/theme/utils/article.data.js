@@ -10,7 +10,7 @@ export default {
 
       return {
         ...data,
-        path: articleFile.substring(articleFile.lastIndexOf('/posts/') + 6).replace('/README.md', ''),
+        path:  articleFile.substring(articleFile.lastIndexOf('/posts/') + 7).replace('/README.md', ''),
       }
     })
   }

@@ -8,4 +8,4 @@ tags: ["MacOS"]
 
 # 如何使用 Karabiner 来代替 Capslox 的体验
 
-文章详情请点击：👉 [如何使用 Karabiner 来代替 Capslox 的体验](../../blog/2022/capslox-karabiner)
+文章详情请点击：👉 如何使用 Karabiner 来代替 Capslox 的体验

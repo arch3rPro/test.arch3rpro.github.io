@@ -8,9 +8,7 @@ export const sidebar: DefaultTheme.Sidebar = {
     '/blog': getItemsByDate('posts/blog'),
     '/review': getItemsByCategory('posts/review'),
     '/softs': getItemsByCategory('posts/softs'),
-    '/workflow': getItemsByCategory('posts/workflow'),
-    '/efficiency': getItemsByCategory('posts/efficiency'),
-    '/reverse-engineering': getItemsByCategory('posts/reverse-engineering'),
+    '/efficiency': getItemsByCategory('posts/efficiency')
 }
 
 // 定义新类型，继承DefaultTheme.SidebarItem，并增加新字段
