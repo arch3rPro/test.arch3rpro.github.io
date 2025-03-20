@@ -63,7 +63,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/arch3rPro/wiki' }
     ],
     footer: {
-      copyright: 'Copyright © 2019-2025 Arch3rPro\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a> | <img src="/gongan.png" style="width: 12px; height: 12px; display: inline-block;"> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a>'
+      copyright: 'Copyright © 2019-2025 Arch3rPro\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">京ICP备2023000451号-3</a>'
     },
     // @ts-ignore
     articleMetadataConfig: {
