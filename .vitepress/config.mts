@@ -8,6 +8,8 @@ import { algolia } from './config/algolia'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // 基础路径
+  base: '/wiki/',
   // 基础配置
   head: head,
   lang: metaData.lang,
@@ -38,7 +40,7 @@ export default defineConfig({
       level: 'deep'
     },
     editLink: {
-      pattern: 'https://github.com/arch3rPro/test.arch3rpro.github.io/edit/main/:path',
+      pattern: 'https://github.com/arch3rPro/wiki/edit/main/:path',
       text: '不妥之处，敬请雅正'
     },
     lastUpdated: {
@@ -58,7 +60,7 @@ export default defineConfig({
       options: algolia,
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/arch3rPro/test.arch3rpro.github.io' }
+      { icon: 'github', link: 'https://github.com/arch3rPro/wiki' }
     ],
     footer: {
       copyright: 'Copyright © 2019-2025 Arch3rPro\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a> | <img src="/gongan.png" style="width: 12px; height: 12px; display: inline-block;"> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a>'
@@ -92,6 +94,6 @@ export default defineConfig({
   ],
 
   sitemap: {
-    hostname: 'https://test.arch3rpro.github.io',
+    hostname: 'https://arch3rpro.github.io/wiki',
   },
 })
