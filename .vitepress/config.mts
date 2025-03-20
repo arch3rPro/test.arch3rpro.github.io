@@ -38,7 +38,7 @@ export default defineConfig({
       level: 'deep'
     },
     editLink: {
-      pattern: 'https://github.com/yqchilde/MyNewBlog/edit/main/:path',
+      pattern: 'https://github.com/arch3rPro/test.arch3rpro.github.io/edit/main/:path',
       text: '不妥之处，敬请雅正'
     },
     lastUpdated: {
@@ -58,14 +58,14 @@ export default defineConfig({
       options: algolia,
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yqchilde/yqchilde.github.io' }
+      { icon: 'github', link: 'https://github.com/arch3rPro/test.arch3rpro.github.io' }
     ],
     footer: {
-      copyright: 'Copyright © 2019-2024 YY\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a> | <img src="/gongan.png" style="width: 12px; height: 12px; display: inline-block;"> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a>'
+      copyright: 'Copyright © 2019-2025 Arch3rPro\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a> | <img src="/gongan.png" style="width: 12px; height: 12px; display: inline-block;"> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a>'
     },
     // @ts-ignore
     articleMetadataConfig: {
-      author: 'YY', // 文章全局默认作者名称
+      author: 'Arch3rPro', // 文章全局默认作者名称
       authorLink: '/about', // 点击作者名时默认跳转的链接
     },
     // 自定义扩展: 文章版权配置
@@ -92,6 +92,6 @@ export default defineConfig({
   ],
 
   sitemap: {
-    hostname: 'https://yqqy.top',
+    hostname: 'https://test.arch3rpro.github.io',
   },
 })
