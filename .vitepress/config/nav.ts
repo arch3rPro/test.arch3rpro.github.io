@@ -15,7 +15,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/blog',
     },
     {
-        text: '提效工具',
+        text: '工具推荐',
         items: [
             {
                 text: '软件推荐与配置',
@@ -28,11 +28,11 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/efficiency'
     },
     {
-        text: 'FeedsSub',
+        text: 'RSS订阅',
         link: '/feeds-sub'
     },
     {
-        text: 'About',
+        text: '关于',
         link: '/about'
     }
 ]
