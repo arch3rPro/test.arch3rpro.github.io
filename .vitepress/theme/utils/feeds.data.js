@@ -4,11 +4,12 @@ import Parser from 'rss-parser';
 let parser = new Parser();
 
 let feeds = [
-    "https://weekly.tw93.fun/rss.xml",
-    "https://blog.j2gg0s.com/feed.xml",
-    "https://tech.meituan.com/feed/",
-    "https://tech.qimao.com/rss/",
-    "https://wechat2rss.xlab.app/feed/f3a42bd249ec6e8834ae761d8d0f85a949950944.xml",
+    {url: "https://www.freebuf.com/feed", name: "FreeBuf"},
+    {url: "https://www.kali.org/rss.xml", name: "Kali Linux"},
+    {url: "https://wechat2rss.xlab.app/feed/19e49fc43c29d227aed74edba9830e7e1c71161e.xml", name: "CT-Stack"},
+    {url: "https://www.exploit-db.com/rss.xml", name: "Exploit-DB"},
+    {url: "https://wechat2rss.xlab.app/feed/d351be711510e0b7ccbcb275cdfab5c4c7e3e839.xml", name: "嘶吼专业版"},
+    {url: "https://infosecwriteups.com/feed", name: "InfoSec"}
 ];
 
 (async () => {
@@ -16,11 +17,11 @@ let feeds = [
 
     for (let feed_link of feeds) {
         try {
-            let feed = await parser.parseURL(feed_link);
+            let feed = await parser.parseURL(feed_link.url);
             let data = {
-                name: feed.title,
+                name: feed_link.name || feed.title,
                 items: feed.items.map(item => ({
-                    name: feed.title,
+                    name: feed_link.name || feed.title,
                     title: item.title,
                     link: item.link,
                     date: item.isoDate
@@ -28,7 +29,7 @@ let feeds = [
             };
             result.push(data);
         } catch (error) {
-            console.error(`Error parsing feed ${feed_link}:`, error);
+            console.error(`Error parsing feed ${feed_link.url}:`, error);
         }
     }
 
