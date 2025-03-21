@@ -1,7 +1,7 @@
 <template>
   <div class="m-center">
     <div class="m-con">
-      <div class="mt-8 pb-3 text-4xl" style="border-bottom: 1px solid var(--vp-c-divider);">RSS 订阅</div>
+      <div class="mt-8 pb-3 text-4xl" style="border-bottom: 1px solid var(--vp-c-divider);">行业洞察</div>
       <div class="tag-item cursor-pointer inline-block mt-3 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 hover:shadow-sm" :class="{
         'bg-gray-100 dark:bg-gray-800 font-medium text-gray-900 dark:text-gray-100 shadow-sm transform scale-105': tag === state.currentName,
       }" :key="tag" @click="collectItemInfo(tag)" v-if="state.names" v-for="(tag, idx) in state.names">
