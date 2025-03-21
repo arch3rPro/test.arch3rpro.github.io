@@ -2,8 +2,8 @@
   <div class="m-center">
     <div class="m-con">
       <div class="mt-8 pb-3 text-4xl" style="border-bottom: 1px solid var(--vp-c-divider);">RSS 订阅</div>
-      <div class="cursor-default inline-block mt-3 px-2 py-1 max-w-200px" :class="{
-        'bg-just-light/20': tag === state.currentName,
+      <div class="tag-item cursor-pointer inline-block mt-3 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 hover:shadow-sm" :class="{
+        'bg-gray-100 dark:bg-gray-800 font-medium text-gray-900 dark:text-gray-100 shadow-sm transform scale-105': tag === state.currentName,
       }" :key="tag" @click="collectItemInfo(tag)" v-if="state.names" v-for="(tag, idx) in state.names">
         <span class="overflow-clip line-clamp-1">{{ tag }}</span>
       </div>
@@ -14,15 +14,15 @@
           <h1 class="text-2xl">{{ year }}</h1>
         </header>
         <div class="pl-2 md:pl-4 flex" v-for="item in items" :key="item.link">
-          <div class="basis-1/6 text-hidden line-clamp-1" :aria-label="item.date">
+          <div class="basis-1/6 text-hidden line-clamp-1 text-[var(--vp-c-text-2)]" :aria-label="item.date">
             {{ dayjs(item.date).format("MM月DD日") }}
           </div>
           <div class="basis-4/6 text-hidden line-clamp-1">
-            <a class="cursor-default hover:bg-just-light/20 hover:text-just-dark" :href="item.link" target="_self">
+            <a class="article-link" :href="item.link" target="_self">
               {{ item.title }}
             </a>
           </div>
-          <div class="basis-2/6 text-hidden line-clamp-1">
+          <div class="basis-2/6 text-hidden line-clamp-1 text-[var(--vp-c-text-2)]">
             {{ item.name }}
           </div>
         </div>
@@ -30,13 +30,13 @@
 
       <!-- 分页控件 -->
       <div class="flex justify-center mt-4 mb-2">
-        <div style="border: 1px dashed var(--vp-c-divider);">
-          <button class="mx-1 px-2 py-1 border rounded hover:bg-gray-200" @click="changePage(state.currentPage - 1)"
+        <div class="pagination-container">
+          <button class="pagination-btn" @click="changePage(state.currentPage - 1)"
             :disabled="state.currentPage === 1">
             上一页
           </button>
-          <span class="mx-2" style="align-content: center;">第 {{ state.currentPage }} 页 / 共 {{ totalPages }} 页</span>
-          <button class="mx-1 px-2 py-1 border rounded hover:bg-gray-200" @click="changePage(state.currentPage + 1)"
+          <span class="pagination-info">第 {{ state.currentPage }} 页 / 共 {{ totalPages }} 页</span>
+          <button class="pagination-btn" @click="changePage(state.currentPage + 1)"
             :disabled="state.currentPage === totalPages">
             下一页
           </button>
@@ -177,17 +177,108 @@ function changePage(page: number) {
 </script>
 
 <style scoped>
+.article-link {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+}
+
+.article-link:visited {
+  color: var(--vp-c-text-1);
+}
+
+.article-link:hover {
+  background-color: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
 .m-center {
-  @apply flex justify-center items-center
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .m-con {
-  @apply max-w-[90%] sm:w-[50%] lg:w-[70%]
+  max-width: 90%;
+  @media (min-width: 640px) {
+    width: 50%;
+  }
+  @media (min-width: 1024px) {
+    width: 70%;
+  }
 }
 
 .text-hidden {
   -webkit-box-orient: vertical;
   overflow: hidden;
   display: -webkit-inline-box;
+}
+
+.tag-item {
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  background-color: var(--vp-c-bg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0.5rem 0.75rem 0.5rem 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.tag-item:hover {
+  border-color: var(--vp-c-brand-light);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tag-item.active {
+  border-color: var(--vp-c-brand);
+  color: var(--vp-c-brand);
+  background-color: var(--vp-c-bg-soft);
+}
+
+.pagination-container {
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.pagination-btn:not(:disabled):hover {
+  background-color: var(--vp-c-brand);
+  color: white;
+  border-color: var(--vp-c-brand);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.pagination-info {
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+  padding: 0 0.5rem;
 }
 </style>
