@@ -53,6 +53,7 @@
       background-color: var(--vp-c-bg);
       border: 1px solid var(--vp-c-divider);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
 
       &:hover {
         transform: translateY(-4px);
@@ -61,12 +62,15 @@
       }
 
       .card-icon {
-        font-size: 2.5em;
-        margin-bottom: 16px;
-        color: var(--vp-c-brand);
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto 16px;
+        display: block;
+        object-fit: contain;
       }
 
       .card-title {
+        text-align: center;
         font-size: 1.4em;
         font-weight: 700;
         margin: 0 0 12px;
@@ -75,17 +79,22 @@
       }
 
       .download-button {
-        display: inline-block;
-        margin-top: 16px;
-        padding: 8px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        margin: 16px auto;
+        padding: 12px 20px;
         border-radius: 6px;
         background-color: var(--vp-c-brand);
         color: white;
         text-decoration: none;
+        font-weight: 500;
         transition: all 0.3s ease;
 
         &:hover {
           background-color: var(--vp-c-brand-dark);
+          transform: translateY(-1px);
         }
 
         &.disabled {
@@ -95,6 +104,10 @@
         }
       }
 
+      .card {
+        text-align: center;
+      }
+
       .card-description {
         color: var(--vp-c-text-2);
         line-height: 1.6;
@@ -102,22 +115,7 @@
         font-size: 0.95em;
       }
 
-      .download-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: var(--vp-c-brand);
-        color: white;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
 
-        &:hover {
-          background-color: var(--vp-c-brand-dark);
-          transform: translateY(-1px);
-        }
-      }
     }
   }
 }

@@ -2,23 +2,24 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.NavItem[] = [
     {
-        text: '示例',
-        link: '/example',
-    },
-    {
-        text: '导航',
-        link: '/nav',
-    },
-    {
         text: "博客",
         link: '/blog',
         activeMatch: '^/blog',
     },
     {
-        text: '工具推荐',
+        text: '下载',
+        link: '/example',
+    },
+
+    {
+        text: '导航',
+        link: '/nav',
+    },
+    {
+        text: '软件推荐',
         items: [
             {
-                text: '软件推荐与配置',
+                text: '效率工具',
                 items: [
                     { text: 'Mac 平台', link: '/efficiency/mac/surge' },
                     { text: 'Windows 平台', link: '/efficiency/windows/keymap' },
@@ -28,7 +29,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/efficiency'
     },
     {
-        text: 'RSS订阅',
+        text: '近期资讯',
         link: '/feeds-sub'
     },
     {
